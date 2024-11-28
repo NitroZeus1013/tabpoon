@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tab Switcher Options</title>
+  </head>
+  <body>
+    <h1>Customize Shortcuts</h1>
+    <label for="prevTab">Switch to previous tab:</label>
+    <input type="text" id="prevTab" value="Ctrl+Shift+Tab" />
+    <br />
+    <label for="nextTab">Switch to next tab:</label>
+    <input type="text" id="nextTab" value="Ctrl+Tab" />
+    <br />
+    <button id="saveButton">Save</button>
+
+    <script>
+      document.getElementById("saveButton").addEventListener("click", function () {
+        let prevTab = document.getElementById("prevTab").value;
+        let nextTab = document.getElementById("nextTab").value;
+        chrome.storage.sync.set({ prevTab: prevTab, nextTab: nextTab }, function () {
+          alert("Shortcuts saved!");
+        });
+      });
+    </script>
+  </body>
+</html>

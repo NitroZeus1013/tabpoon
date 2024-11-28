@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Switcher Extension",
+  "description": "Customize keyboard shortcuts for switching tabs.",
+  "version": "1.0",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "switch-tab-left": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Tab"
+      },
+      "description": "Switch to the previous tab"
+    },
+    "switch-tab-right": {
+      "suggested_key": {
+        "default": "Ctrl+Tab"
+      },
+      "description": "Switch to the next tab"
+    },
+    "jump-to-last-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Jump to the last tab"
+    }
+  },
+  "host_permissions": ["http://*/*", "https://*/*"]
+}
